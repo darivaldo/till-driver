@@ -1,0 +1,39 @@
+<ion-content>
+    <div class="map-overlay" style="z-index:99999999;">
+        <div style="top:0; right: 0; padding: 4px;">
+            <button class="profile" style="background-color: #f7793d !important;border-radius:10px !important;" ion-button menuToggle>
+                <ion-icon name="contact"></ion-icon>
+            </button>
+        </div>
+    </div>
+    <div id="{{ mapId }}" [ngStyle]="{height: '92%'}"></div>
+
+</ion-content>
+<ion-footer>
+    <ion-item>
+        <ion-avatar item-left>
+            <img src="./assets/img/default-dp.jpeg">
+        </ion-avatar>
+        <ion-label>{{ (driver)?.name }} - {{ (driver)?.rating }}
+            <ion-icon name="md-star"></ion-icon>
+        </ion-label>
+        <ion-toggle item-right [(ngModel)]="isDriverAvailable" (ionChange)="onChangeAvailability()"></ion-toggle>
+    </ion-item>
+    <ion-row>
+        <ion-col text-center>
+            <button ion-button clear (click)="goWallet()">
+                Ganhos
+            </button>
+        </ion-col>
+        <ion-col text-center>
+            <button ion-button clear (click)="goHistory()">
+                Histórico
+            </button>
+        </ion-col>
+        <ion-col text-center>
+            <button ion-button clear (click)="goProfile()">
+                Perfil
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

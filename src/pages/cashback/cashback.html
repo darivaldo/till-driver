@@ -1,0 +1,40 @@
+<!--
+  Generated template for the CashbackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>Cashback</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="common-bg">
+    <!--Primeira forma-->
+    <div class="booking-form card round" margin>
+        <ion-grid>
+            <ion-row style="border-bottom: 1px solid #ccc;">
+                <ion-col ion-text><h6 class="text-till text-center">Mês/Ano</h6></ion-col>
+                <ion-col ion-text><h6 class="text-till text-center">Pontos Acumulados</h6></ion-col>
+                <ion-col ion-text><h6 class="text-till text-center">Cashback</h6></ion-col>
+            </ion-row>
+            <ion-row *ngFor="let cash of cashBack">
+                <ion-col class="text-center"><span class="text-center">{{ cash.mes }}/{{ cash.ano }}</span></ion-col>
+                <ion-col class="text-center"><span class="text-center">{{ cash.pontos | number }}</span>
+                </ion-col>
+                <ion-col class="text-center"><span class="text-center">{{ cash.cashback | currency: 'BRL' }} </span>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <!--<span *ngIf="cashBack == ''">
+          Sua rede ainda não produziu pontos para que você receba. Incentive sua rede para ter mais ganhos.
+          <br/>
+        </span>-->
+
+    </div>
+
+</ion-content>

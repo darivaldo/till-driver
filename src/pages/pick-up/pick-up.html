@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{'Informações da Corrida' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                <ion-item *ngIf="passenger.phoneNumber">
+                    <h2>{{(passenger)?.name }}</h2>
+                    <p>{{(passenger)?.phoneNumber }}</p>
+                    <a href="tel:{{passenger.phoneNumber}}" ion-button clear item-right>
+                        <ion-icon name="call"></ion-icon>&nbsp; {{'Ligar' | translate}}
+                    </a>
+                </ion-item>
+                <ion-item *ngIf="(!isTripStarted)">
+                    <h2>{{'De' | translate}}</h2>
+                    <p>{{ trip.origin.vicinity }}</p>
+                    <button item-right ion-button clear
+                        (click)="getDirection(trip.origin.location.lat,trip.origin.location.lng)">
+                        <ion-icon name="navigate"></ion-icon>&nbsp; {{'Pegar Passageiro' | translate}}
+                    </button>
+                </ion-item>
+                <ion-item *ngIf="(isTripStarted)"
+                    (click)="getDirection(trip.destination.location.lat,trip.destination.location.lng)">
+                    <h2>{{'Para' | translate}}</h2>
+                    <p>{{ trip.destination.vicinity }}</p>
+                    <button item-right clear ion-button
+                        (click)="getDirection(trip.destination.location.lat,trip.destination.location.lng)">
+                        <ion-icon name="navigate"></ion-icon>&nbsp; {{'Corrida' | translate}}
+                    </button>
+                </ion-item>
+
+
+            </ion-list>
+
+        </ion-card-content>
+
+    </ion-card>
+    <ion-badge>{{ trip.payment_method }}</ion-badge>
+    <div id="map" style="height: 80%;width:100%;"></div>
+
+</ion-content>
+<ion-footer>
+    <ion-grid>
+
+        <ion-row>
+            <ion-col>
+                <ion-icon name="car"></ion-icon>
+                <b>{{ distanceText }}</b>
+            </ion-col>
+            <ion-col>
+                <ion-icon name="time"></ion-icon>
+                <b>{{durationText}}</b>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <button style="background: #ffcc00" ion-button block clear [hidden]="isTripStarted"
+                    (click)="inform()">{{'Avisar que chegou' | translate}}</button>
+            </ion-col>
+            <ion-col>
+                <button style="background: #489445;color: #fff" ion-button block clear [hidden]="isTripStarted"
+                    (click)="pickup()">{{'Pegar Passageiro' | translate}}</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <button ion-button block clear [hidden]="!isTripStarted"
+        (click)="showPayment()">{{'Fechar Corrida' | translate}}</button>
+</ion-footer>

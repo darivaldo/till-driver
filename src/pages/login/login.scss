@@ -1,0 +1,36 @@
+page-login {
+  .btn-till {
+    background: color($colors, till);
+  }
+
+  .auth-bg {
+    background: url("../assets/img/banner.jpg") no-repeat center;
+    background-size: 100% 100%;
+
+    .scroll-content {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+
+      .auth-content {
+        min-width: 86%;
+
+        .light-bg {
+          // keep only bottom border
+          .item-input {
+            margin: 0;
+            padding-left: 0;
+            border: none;
+            border-bottom: 1px solid #DDD;
+
+            .item-inner {
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

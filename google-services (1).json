@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1082411841578",
+    "project_id": "till-424401",
+    "storage_bucket": "till-424401.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082411841578:android:60e48272f78c3f98ffeb53",
+        "android_client_info": {
+          "package_name": "till.driver.com.br"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUgaeFOSv4L_Yps9UWsVAKiLYNn2Ql9hY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082411841578:android:6d368422de9ae846ffeb53",
+        "android_client_info": {
+          "package_name": "till.rider.com.br"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUgaeFOSv4L_Yps9UWsVAKiLYNn2Ql9hY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

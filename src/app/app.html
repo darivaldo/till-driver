@@ -1,0 +1,24 @@
+<ion-menu [content]="content">
+
+    <ion-content class="menu-left">
+        <!-- User profile -->
+        <div text-center padding-top padding-bottom class="primary-bg menu-left">
+            <h4 dark>Motorista</h4>
+            <a menuClose>
+                 Fechar menu <ion-icon name="exit"></ion-icon>
+            </a>
+        </div>
+
+        <ion-list class="list-full-border">
+
+            <button ion-item menuClose *ngFor="let page of pages" (click)="openPage(page)">
+                <ion-icon item-left name="{{ page.icon }}"></ion-icon>
+                {{ page.title }}
+                <ion-badge danger item-right *ngIf="page.count">{{ page.count }}</ion-badge>
+            </button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

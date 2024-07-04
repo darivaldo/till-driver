@@ -1,0 +1,58 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>Premiações Till</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="common-bg">
+
+    <!--Primeira forma-->
+    <div class="booking-form card round" margin>
+        <div class="border-bottom" padding>
+            <h5>Primeira forma de Ganho</h5>
+
+            <!--choose guest-->
+            <ion-grid class="filters" no-padding margin-top>
+                <ion-row>
+                    <h6 class="till-txt">Premiações para motoristas e passageiros.</h6>
+                    Os valores que são repassados à Till de suas corridas viram pontos para você!<br/><br/>
+                    Veja quais prêmios você pode ganhar de acordo com seu
+                    cadastro da Till.
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div padding class="form-bottom">
+            <button ion-button class="pull-right" color="till" tappable (click)="goFirst()">
+                Ver Prêmios
+            </button>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--Fim Primeira forma-->
+
+    <!--Segunda forma-->
+    <div class="booking-form card round" margin>
+        <div class="border-bottom" padding>
+            <h5>Segunda forma de Ganho</h5>
+
+            <!--choose guest-->
+            <ion-grid class="filters" no-padding margin-top>
+                <ion-row>
+                    <h6 class="till-txt">Cashback.</h6>
+                    Ganhe 1% do dinheiro de volta, sobre a pontuação de seus indicados diretos.
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div padding class="form-bottom">
+            <button ion-button class="pull-right" color="till" tappable (click)="goSecond()">
+                Ver pontuação e ganhos
+            </button>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--Fim Segunda forma-->
+
+
+</ion-content>

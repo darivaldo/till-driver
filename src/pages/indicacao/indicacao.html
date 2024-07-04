@@ -1,0 +1,54 @@
+<ion-header>
+
+    <ion-navbar color="till">
+        <ion-title>Indicação</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <p>
+        Se você foi indicado por alguém já cadastrado na Till, insira o código de indicação abaixo:
+    </p>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Código de indicação</ion-label>
+            <ion-input type="text" [(ngModel)]="indicacao"
+                       (ngModelChange)="indicacao = $event.toLocaleUpperCase()"></ion-input>
+        </ion-item>
+        <ion-item>
+            <button type="button" ion-button padding block (click)="validar()">Validar</button>
+        </ion-item>
+        <ion-item *ngIf="mostraIndicacao">
+            <h2><strong>Indicação encontrada!</strong></h2>
+            <br/>
+            <strong>Nome:</strong> {{ indicadoPor?.primeiro_nome }} {{ indicadoPor?.segundo_nome }}
+            <br/><br/>
+        </ion-item>
+        <ion-item *ngIf="mostraIndicacao">
+            Confirme a indicação:
+        </ion-item>
+        <ion-row *ngIf="mostraIndicacao">
+            <ion-col>
+                <button type="button" class="yes" ion-button padding block (click)="criarCodigo()">Sim</button>
+            </ion-col>
+            <ion-col>
+                <button type="button" class="not" ion-button padding block (click)="invalidarIndicacao()">Não</button>
+            </ion-col>
+        </ion-row>
+        <ion-item *ngIf="indicacaoOk">
+            <h2><strong>Agora crie o seu código de indicação:</strong></h2>
+        </ion-item>
+        <ion-item *ngIf="indicacaoOk">
+            <ion-label stacked>Meu código de indicação</ion-label>
+            <ion-input type="text" [(ngModel)]="minhaIndicacao"
+                       (ngModelChange)="minhaIndicacao = $event.toLocaleUpperCase()"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="indicacaoOk">
+            <button type="button" ion-button padding block (click)="criarIndicacao()">Continuar</button>
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="till">
+    <ion-title>
+      Foto da CNH
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>Tire a foto de sua carteira de motorista</ion-item>
+  <img src="{{ photo }}" />
+</ion-content>
+
+<ion-footer padding>
+  <button ion-button large block (click)="takePicture()">Câmera</button>
+</ion-footer>

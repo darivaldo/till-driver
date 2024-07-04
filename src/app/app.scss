@@ -1,0 +1,468 @@
+
+
+.common-bg {
+  background-color: #dbdbdb !important;
+}
+
+.logo {
+  margin: 20px auto 0;
+  padding: 0;
+  width: 200px;
+  border-radius: 10%;
+  font-size: 3em;
+}
+.header{
+  background: color($colors, light);
+  border-bottom: 5px solid color($colors, till);
+}
+#docsPDF, #avatar{
+  display:none;
+}
+.widhdraw-header{
+  text-align: center;
+  min-height: 200px;
+  background: color($colors, primary);
+  color:#fff;
+  margin-top: -20px;
+  padding-top: 30px
+}
+
+.okcss{
+  background: #489445 !important;
+  color: #fff !important;
+}
+
+.cancelcss{
+  background: #940818 !important;
+  color: #fff !important;
+}
+
+.alertcss{
+  background: color($colors, till);
+}
+
+.alertcss .alert-head{
+  background: #222 !important;
+  color: #fff !important;
+  text-align: center !important;
+  padding: 10px 0;
+}
+
+.alertcss .alert-button-group{
+  justify-content: center;
+}
+
+.alertcss .alert-message{
+  margin-top: 15px;
+  color: #000;
+}
+
+.profileBack {
+  background-image: url(../assets/img/banner.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 200px;
+  opacity: 0.9;
+}
+
+.profileImage {
+  margin-top: 20px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px gray;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header{
+  background: color($colors, till)
+}
+
+.light-bg {
+  background-color: color($colors, light);
+  border-radius: 15px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.rlt {
+  position: relative;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.primary-bg {
+  background-color: color($colors, primary);
+  color: #fff;
+}
+
+.light {
+  color: color($colors, light);
+}
+
+// text style
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-hint {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.modal-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.round {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+// position
+.align-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+}
+
+.list-no-border {
+
+  .item:first-child {
+    border: none;
+  }
+  .item:last-child {
+    border: none;
+  }
+
+  .item-inner {
+    border: none;
+  }
+}
+
+.list-full-border {
+  @extend .list-no-border;
+
+  .item,
+  .item:first-child {
+    border-bottom: 1px solid color($colors, border-color);
+
+    .item-inner {
+      border: none;
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+// auth page
+.logo {
+  font-size: 2.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.okcss{
+  background: #489445 !important;
+  color: #fff !important;
+}
+
+.cancelcss{
+  background: #940818 !important;
+  color: #fff !important;
+}
+
+.alertcss{
+  background: color($colors, till);
+}
+
+.alertcss .alert-head{
+  background: #222 !important;
+  color: #fff !important;
+  text-align: center !important;
+  padding: 10px 0;
+}
+
+.alertcss .alert-button-group{
+  justify-content: center;
+}
+
+.alertcss .alert-message{
+  margin-top: 15px;
+}
+
+.alertnormal .alert-head{
+  background: #222 !important;
+  color: #fff !important;
+  text-align: center !important;
+  padding: 10px 0;
+}
+
+.alertnormal .alert-button-group{
+  justify-content: center;
+}
+
+.alertnormal .alert-message{
+  margin-top: 15px;
+}
+
+.oknormalcss{
+  background: #489445 !important;
+  color: #fff !important;
+  justify-content: center;
+  padding: 10px 30px !important;
+}
+
+.cancelnormalcss{
+  background: #940818 !important;
+  color: #fff !important;
+  justify-content: center;
+  padding: 10px 30px !important;
+}
+
+.text-till{
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-till{
+  color: color($colors, 'till');
+}
+
+.text-center{
+  text-align: center;
+  vertical-align: middle;
+}
+// Helpers
+.quarter-op {
+  opacity: .25;
+}
+
+.no-paddingTRL {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.no-paddingTRB {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.no-paddingB {
+  padding-bottom: 0 !important;
+}
+
+.no-paddingT {
+  padding-top: 0 !important;
+}
+
+.padding-xs {
+  padding: 10px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-pl {
+  padding-left: 0 !important;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-marginT {
+  margin-top: 0 !important;
+}
+
+.mt-half {
+  margin-top: .5rem !important;
+}
+
+.mt-1 {
+  margin-top: 1rem !important;
+}
+
+.mb-half {
+  margin-bottom: .5rem;
+}
+
+.marginB-16px {
+  margin-bottom: 16px !important;
+}
+
+.marginB-2 {
+  margin-bottom: 2rem !important;
+}
+
+.marginT-16px {
+  margin-top: 16px !important;
+}
+
+.marginT-2 {
+  margin-top: 2rem !important;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.rlt {
+  position: relative;
+}
+
+.clear {
+  clear: both;
+}
+
+.align-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.round {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.no-round {
+  border-radius: 0;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(86, 61, 124, 0.1);
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.max-width {
+  max-width: 100% !important;
+}
+
+.padding-sm {
+  padding: 1rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+// text size
+.text-2x {
+  font-size: 2em;
+}
+
+.text-1x {
+  font-size: 1em;
+}
+
+.text-sm {
+  font-size: 0.7em;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+// buttons configs
+.btn-facebook {
+  background-color: #3B5999;
+}
+
+.btn-twitter {
+  background-color: #00ACEE;
+}
+
+.btn-gplus {
+  background-color: #E04006
+}
+
+// badge style
+ion-badge {
+  &.square {
+    border-radius: 0;
+  }
+}
+
+// card style
+.card {
+  background: #FFF;
+  border-radius: 1rem;
+  box-shadow: 0 0 1px rgba(86, 61, 124, 0.2), 0 2px 4px rgba(86, 61, 124, 0.15);
+}
+
+
+// navbar style
+ion-navbar.no-border {
+
+  .toolbar-background {
+    border: none;
+  }
+
+  .white-bg {
+    background-color: #fff;
+  }
+
+  .detail-bg {
+    background-color: #f1f1f5;
+  }
+
+  .light-bg {
+    background-color: color($colors, light);
+  }
+
+  .dark-bg {
+    background-color: color($colors, dark);
+  }
+
+  .green-bg {
+    background-color: #68C91F;
+  }
+
+  .till-txt{
+    color: color($colors, 'till');
+  }
+
+}

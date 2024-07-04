@@ -1,0 +1,165 @@
+<ion-header>
+    <ion-navbar color="till">
+        <ion-title>{{'Crie sua conta' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-segment [(ngModel)]="tabs">
+        <ion-segment-button value="profile">
+            {{'Dados Pessoais' | translate}}
+        </ion-segment-button>
+        <!--
+        <ion-segment-button value="residence">
+            {{'Residência' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="uploaddocs">
+            {{'Enviar documentos' | translate}}
+        </ion-segment-button>
+        -->
+    </ion-segment>
+    <form [formGroup]="form" (submit)="submit()">
+        <div [ngSwitch]="tabs" padding>
+            <div *ngSwitchCase="'profile'">
+                <!--
+                <ion-input type="file" [hidden]="true" #inputFilePhoto (change)="onChosePhoto($event.target.files)"></ion-input>
+                <button type="button" ion-button color="till" (click)="selectPhoto()">Escolher foto do perfil</button>
+                <ion-card *ngIf="photoPreview">
+                    <ion-item>
+                        <ion-avatar item-start>
+                            <img [src]="photoPreview">
+                        </ion-avatar>
+                        <h2>Foto do perfil escolhida</h2>
+                        <ion-icon name="close" item-end (click)="photoPreview = null;this.form.get('photo').setValue(null);"></ion-icon>
+                    </ion-item>
+                </ion-card>
+                <ion-item
+                        *ngIf="!form.controls.photo.valid">
+                    <p class="error-message">Escolha uma foto para o perfil.</p>
+                </ion-item>
+                -->
+                <ion-item>
+                    <ion-label stacked>Nome</ion-label>
+                    <ion-input type="text" formControlName="name"></ion-input>
+                </ion-item>
+                <ion-item
+                        *ngIf="!form.controls.name.valid  && (form.controls.name.dirty)">
+                    <p class="error-message">Digite um nome válido.</p>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>E-mail</ion-label>
+                    <ion-input type="email" formControlName="email"></ion-input>
+                </ion-item>
+                <ion-item
+                        *ngIf="!form.controls.email.valid  && (form.controls.email.dirty)">
+                    <p class="error-message">Digite um e-mail válido.</p>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>Senha</ion-label>
+                    <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <ion-item
+                        *ngIf="!form.controls.password.valid  && (form.controls.password.dirty)">
+                    <p class="error-message">Digite uma senha com pelo menos 6 caracteres.</p>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>{{'Celular' | translate}}</ion-label>
+                    <ion-input type="text" formControlName="phoneNumber"
+                               [brmasker]="{phone: true}"></ion-input>
+                </ion-item>
+                <ion-item
+                        *ngIf="!form.controls.phoneNumber.valid  && (form.controls.phoneNumber.dirty)">
+                    <p class="error-message">Digite o seu telefone celular.</p>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>CPF</ion-label>
+                    <ion-input type="text" formControlName="itin" [brmasker]="{mask:'000.000.000-00', len:14}" (ionBlur)="validaCpf()"></ion-input>
+                </ion-item>
+                <ion-item
+                        *ngIf="!isCpfValid && showCpfValidation">
+                    <p class="error-message">CPF inválido.</p>
+                </ion-item>
+
+                <!--
+                <ion-item>
+                    <ion-label stacked>RG</ion-label>
+                    <ion-input type="text" formControlName="id_card" [brmasker]="{mask:'00.000.000-00', len:13}"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label stacked>Sexo</ion-label>
+                    <ion-select formControlName="gender">
+                        <ion-option value="M">Masculino</ion-option>
+                        <ion-option value="F">Feminino</ion-option>
+                    </ion-select>
+                </ion-item>
+                -->
+
+                <ion-item>
+                    <ion-label stacked>Nascimento</ion-label>
+                    <ion-datetime formControlName="birthdate" displayFormat="DD/MM/YYYY" [max]="year"></ion-datetime>
+                </ion-item>
+                <ion-item text-center>
+                    Ao se registrar, você concorda com os<br/>
+                    Termos e Condições deste aplicativo.<br/>
+                    Para ler, clique no botão abaixo:<br/>
+                    <button ion-button clear (click)="goTermos()" color="till">Termos e Condições</button>
+                </ion-item>
+            </div>
+            <!--
+            <div *ngSwitchCase="'residence'">
+                <ion-item>
+                    <ion-label stacked>CEP</ion-label>
+                    <ion-input formControlName="zipcode" (ionBlur)="getCep()" type="text" [brmasker]="{mask:'00000-000', type:'num'}"
+                               [class.invalid]="!form.controls.zipcode.valid && (form.controls.zipcode.dirty)"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label stacked>Endereço</ion-label>
+                    <ion-input formControlName="address" type="text"
+                               [class.invalid]="!form.controls.address.valid && (form.controls.address.dirty)"></ion-input>
+                </ion-item>
+
+
+                <ion-item>
+                    <ion-label stacked>Número</ion-label>
+                    <ion-input formControlName="number" type="text" #inputNumber
+                               [class.invalid]="!form.controls.number.valid && (form.controls.number.dirty)"></ion-input>
+                </ion-item>
+
+
+                <ion-item>
+                    <ion-label stacked>Complemento</ion-label>
+                    <ion-input formControlName="complement" type="text"></ion-input>
+                </ion-item>
+
+
+                <ion-item>
+                    <ion-label stacked>Bairro</ion-label>
+                    <ion-input formControlName="neighborhood" type="text"
+                               [class.invalid]="!form.controls.neighborhood.valid && (form.controls.neighborhood.dirty)"></ion-input>
+                </ion-item>
+
+
+                <ion-item>
+                    <ion-label stacked>Cidade</ion-label>
+                    <ion-input formControlName="city" type="text"
+                               [class.invalid]="!form.controls.city.valid && (form.controls.city.dirty)"></ion-input>
+                </ion-item>
+
+
+                <ion-item>
+                    <ion-label stacked>Estado</ion-label>
+                    <ion-input formControlName="state" type="text"
+                               [class.invalid]="!form.controls.state.valid && (form.controls.state.dirty)"></ion-input>
+                </ion-item>
+            </div>
+           -->
+
+        </div>
+    </form>
+</ion-content>
+<ion-footer>
+    <button type="submit" ion-button block color="till" (click)="submit()" [disabled]="form.invalid">{{buttonText}}</button>
+</ion-footer>

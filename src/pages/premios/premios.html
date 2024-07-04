@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Premiações Till</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="ganhos detail-bg">
+  <div class="ganho card" *ngFor="let prize of prizes" tappable margin-bottom>
+    <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + prize.imgUrl + ')'}">
+      <div class="background-filter rlt">
+        <div class="align-bottom" padding-left padding-right>
+          <h6 class="pull-left text-white" ion-text>{{ prize.name }}</h6>
+          <h6 class="pull-right text-white" ion-text>{{ prize.points | number }} pontos</h6>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="padding-sm primary-bg">
+      <div>
+        <span ion-text class="text-white" *ngIf="prize.redeemed=='0' && prize.can_redeem == '1'">Resgatar Prêmio</span>
+        <span ion-text class="text-white" *ngIf="prize.redeemed=='1'">Prêmio resgatado em {{prize.redeemed_at | date:'dd/MM/yyyy'}}</span>
+        <span ion-text class="text-white" *ngIf="prize.can_redeem=='0'"><strong>&nbsp;</strong></span>
+        <span class="pull-right" ion-text color="light" *ngIf="prize.can_redeem=='0'">
+                   <strong>Faltam</strong> <span ion-text class="text-white" > {{ prize.points - prize.earned | number }} pts</span>
+                </span>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

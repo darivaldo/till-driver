@@ -1,0 +1,34 @@
+<ion-content class=" auth-bg">
+  <div class="auth-content">
+
+    <div class="light-bg">
+      <div padding text-center>
+        <div class="logo secondary-bg">
+          <img src="assets/img/logo.png" height="120"/>
+          <h2 ion-text color="dark">{{'Till Motorista' | translate }}</h2>
+        </div>
+      </div>
+
+      <ion-list class="list-form" padding>
+        <ion-item>
+          <ion-label stacked>{{'E-mail' | translate }}</ion-label>
+          <ion-input style="border-radius: 5%;" type="text" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>{{'PASSWORD' | translate }}</ion-label>
+          <ion-input style="border-radius: 5%;" type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button clear item-right (click)="reset()">{{'Esqueci a senha' | translate }}</button>
+        </ion-item>
+        <ion-item>
+          <button style="border-radius: 5%;background-color: #025f12 !important; " padding ion-button block (click)="login()">{{'Entrar' | translate }}</button>
+        </ion-item>
+      </ion-list>
+
+    </div>
+  </div>
+</ion-content>
+<ion-footer *ngIf="isRegisterEnabled">
+  <button style="border-radius: 5%; background-color:#f75105 !important;" ion-button block class="btn-till" (click)="signup()">{{'Criar Conta' | translate }}</button>
+</ion-footer>

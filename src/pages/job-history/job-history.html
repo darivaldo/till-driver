@@ -1,0 +1,67 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'Histórico' | translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-slides pager>
+        <ion-slide>
+            <h1>{{ stats.today }}</h1>
+            <p>Hoje</p>
+        </ion-slide>
+        <ion-slide>
+            <h1>{{ stats.yesterday }}</h1>
+            <p>Ontem</p>
+        </ion-slide>
+        <ion-slide>
+            <h1>{{ stats.thisMonth }}</h1>
+            <p>Este Mêsh</p>
+        </ion-slide>
+        <ion-slide>
+            <h1>{{ stats.lastMonth }}</h1>
+            <p>Mês Passado</p>
+        </ion-slide>
+        <ion-slide>
+            <h1>{{ stats.thisYear }}</h1>
+            <p>Este Ano</p>
+        </ion-slide>
+        <ion-slide>
+            <h1>{{ stats.lastYear }}</h1>
+            <p>Ano Passado</p>
+        </ion-slide>
+    </ion-slides>
+    <ion-card *ngFor="let trip of trips">
+        <ion-card-content>
+            <!--<p>{{trip.$key}}</p>-->
+            <ion-row>
+                <ion-col>
+                    <b style="text-align:center">DE</b>
+                    <p>{{ trip.origin.vicinity }} <br/>
+                        <ion-note>{{ trip.pickedUpAt | amDateFormat: 'YYYY-MM-DD HH:mm'}}</ion-note>
+                    </p>
+                </ion-col>
+                <ion-col>
+                    <b style="text-align:center">Para</b>
+                    <p>{{ trip.destination.vicinity }} <br/>
+                        <ion-note>{{ trip.droppedOffAt | amDateFormat: 'YYYY-MM-DD HH:mm'}}</ion-note>
+                    </p>
+                </ion-col>
+            </ion-row>
+            <p>Forma de Pagamento: {{ trip.paymentMethod }}</p>
+            <p>Valor: {{trip.currency}} {{trip.fee}} * {{ trip.promo}} {{trip.discount}} %
+                = {{ trip.fee - (trip.fee * trip.discount / 100) }}</p>
+            <p>Repasse Till: {{trip.currency}}
+                = {{ (trip.fee - (trip.fee * trip.discount / 100)) * 20 / 100 | number:'1.1-2' }} </p>
+            <p>Taxas: {{trip.currency}} {{ trip.distance / 1000 * 0.40 | number:'1.1-2'  }}</p>
+            <p>Valor para o Motorista: {{trip.currency}}
+                {{ (trip.fee - (trip.fee * trip.discount / 100)) - ((trip.fee - (trip.fee * trip.discount / 100)) * 20 / 100) - (trip.distance / 1000 * 0.40) | number:'1.1-2' }}
+            </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

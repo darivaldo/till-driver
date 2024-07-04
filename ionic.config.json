@@ -1,0 +1,7 @@
+{
+  "name": "tilldriver",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

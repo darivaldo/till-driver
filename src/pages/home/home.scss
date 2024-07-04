@@ -1,0 +1,16 @@
+page-home {
+    #map{
+        width:100%;
+    }
+    .map-overlay {
+        position: absolute;
+        top: 5px;
+        left:5px;
+        right: 5px;
+    }
+
+    .btnCenter{
+        vertical-align: center;
+    }
+
+}
