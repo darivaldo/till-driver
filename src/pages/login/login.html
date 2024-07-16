@@ -5,7 +5,7 @@
       <div padding text-center>
         <div class="logo secondary-bg">
           <img src="assets/img/logo.png" height="120"/>
-          <h2 ion-text color="dark">{{'Till Motorista' | translate }}</h2>
+          <h2 ion-text color="dark">{{'Dado Motorista' | translate }}</h2>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
           <button ion-button clear item-right (click)="reset()">{{'Esqueci a senha' | translate }}</button>
         </ion-item>
         <ion-item>
-          <button style="border-radius: 5%;background-color: #025f12 !important; " padding ion-button block (click)="login()">{{'Entrar' | translate }}</button>
+          <button style="border-radius: 5%; font-weight:bolder; color:#f8f406; background-color: #f80505 !important; " padding ion-button block (click)="login()">{{'Entrar' | translate }}</button>
         </ion-item>
       </ion-list>
 
@@ -30,5 +30,5 @@
   </div>
 </ion-content>
 <ion-footer *ngIf="isRegisterEnabled">
-  <button style="border-radius: 5%; background-color:#f75105 !important;" ion-button block class="btn-till" (click)="signup()">{{'Criar Conta' | translate }}</button>
+  <button style="border-radius: 5%; font-weight:bolder;color: #f80505 !important;  background-color:#f8f406 !important;" ion-button block class="btn-dado" (click)="signup()">{{'Criar Conta' | translate }}</button>
 </ion-footer>

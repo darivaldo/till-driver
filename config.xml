@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="till.driver.com.br" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Till Driver</name>
-    <description>Till Motorista - Mobilidade Urbana</description>
-    <author email="ti@till.com.br" href="http://till.com.br/">Till</author>
+<widget id="dado.driver.com.br" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Dado Driver</name>
+    <description>Dado Motorista - Mobilidade Urbana</description>
+    <author email="ti@dado.com.br" href="http://dado.com.br/">Dado</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />

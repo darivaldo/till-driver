@@ -91,7 +91,7 @@ export class RegisterPage {
     getCadastroTill() {
         let sForm = this.form;
 
-        //Verifica cadastro till
+        //Verifica cadastro dado
         sForm.controls.name.setValue(this.snapshot.primeiro_nome + ' ' + this.snapshot.segundo_nome);
         sForm.controls.email.setValue(this.snapshot.email);
         sForm.controls.birthdate.setValue(this.snapshot.data_nascimento);
@@ -117,7 +117,7 @@ export class RegisterPage {
         */
 
         const alert = this.alertCtrl.create({
-            title: 'Till App',
+            title: 'Dado App',
             cssClass: 'alertnormal',
             message: 'Verificamos que seu cadastro pode estar incompleto. Por favor, verifique e complete suas informações.',
             buttons: [{
@@ -206,7 +206,7 @@ export class RegisterPage {
              });
          }
  */
-        this.alertCtrl.create({message: 'Demonstração do app Till.', buttons: ['OK']}).present();
+        this.alertCtrl.create({message: 'Demonstração do app Dado.', buttons: ['OK']}).present();
         /* let loading = this.loadingCtrl.create({content: 'Criando conta...'});
          loading.present();
          this.authService.register(this.userInfo).subscribe(() => {

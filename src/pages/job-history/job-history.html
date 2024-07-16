@@ -56,7 +56,7 @@
             <p>Forma de Pagamento: {{ trip.paymentMethod }}</p>
             <p>Valor: {{trip.currency}} {{trip.fee}} * {{ trip.promo}} {{trip.discount}} %
                 = {{ trip.fee - (trip.fee * trip.discount / 100) }}</p>
-            <p>Repasse Till: {{trip.currency}}
+            <p>Repasse Dado: {{trip.currency}}
                 = {{ (trip.fee - (trip.fee * trip.discount / 100)) * 20 / 100 | number:'1.1-2' }} </p>
             <p>Taxas: {{trip.currency}} {{ trip.distance / 1000 * 0.40 | number:'1.1-2'  }}</p>
             <p>Valor para o Motorista: {{trip.currency}}
