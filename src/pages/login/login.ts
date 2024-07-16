@@ -7,7 +7,7 @@ import {ENABLE_SIGNUP} from "../../services/constants";
 import * as firebase from 'firebase';
 import {TranslateService} from '@ngx-translate/core';
 import {IndicacaoPage} from "../indicacao/indicacao";
-import {CadastroTillProvider} from "../../providers/cadastro-dado/cadastro-dado";
+import {CadastroDadoProvider} from "../../providers/cadastro-dado/cadastro-dado";
 
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginPage {
     constructor(public nav: NavController, public navParams: NavParams,
                 public authService: AuthService, public alertCtrl: AlertController,
                 public loadingCtrl: LoadingController, public toast: ToastController,
-                public translate: TranslateService, public dado: CadastroTillProvider) {
+                public translate: TranslateService, public dado: CadastroDadoProvider) {
 
                 if (this.navParams.get('email') && this.navParams.get('password')) {
                     this.email = this.navParams.get('email');
@@ -56,7 +56,7 @@ export class LoginPage {
     // go to login page
     login() {
         let msg = "";
-        let verifyTill = false;
+        let verifyDado = false;
         if (this.email.length == 0 || this.password.length == 0) {
             this.alertCtrl.create({subTitle: 'Dados inválidos', buttons: ['ok']}).present();
         } else {
@@ -74,7 +74,7 @@ export class LoginPage {
                 switch (err.code) {
                     case 'auth/user-not-found':
                         msg = "Usuário não encontrado.";
-                        //verifyTill = true;
+                        //verifyDado = true;
                         break;
                     case 'auth/wrong-password':
                         msg = "Senha incorreta. Por favor, tente novamente.";
@@ -83,7 +83,7 @@ export class LoginPage {
                         msg = "Ocorreu um erro no login. Por favor, tente novamente.";
                         break;
                 }
-                if (!verifyTill){
+                if (!verifyDado){
                     let alert = this.alertCtrl.create({
                         message: msg,
                         buttons: ['OK']

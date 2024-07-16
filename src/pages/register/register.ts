@@ -76,7 +76,7 @@ export class RegisterPage {
             this.snapshot = this.navParams.get('snapshot');
             this.form.controls.indicadoPor.setValue(this.snapshot.codigo_indicacao);
             this.form.controls.minhaIndicacao.setValue(this.snapshot.codigo_afiliacao);
-            this.getCadastroTill();
+            this.getCadastroDado();
             this.buttonText = 'Salvar Dados';
         } else if (this.origin == 'new') {
             this.indicadoPor = this.navParams.get('indicadoPor');
@@ -88,7 +88,7 @@ export class RegisterPage {
         this.dateParams();
     }
 
-    getCadastroTill() {
+    getCadastroDado() {
         let sForm = this.form;
 
         //Verifica cadastro dado
@@ -128,7 +128,7 @@ export class RegisterPage {
         alert.present();
     }
 
-    getDbTill() {
+    getDbDado() {
         return this.db.list('pessoas',ref => ref.orderByChild('email').equalTo(this.me.email)).valueChanges();
     }
 
@@ -239,7 +239,7 @@ export class RegisterPage {
             .then((imageData) => {
                 let base64image = 'data:image/jpeg;base64,' + imageData;
                 this.photo = base64image;
-                this.writeFile(base64image, 'tillpic', 'tillavatar.jpg');
+                this.writeFile(base64image, 'dadopic', 'dadoavatar.jpg');
 
             }, (error) => {
                 console.error(error);

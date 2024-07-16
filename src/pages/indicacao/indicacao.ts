@@ -3,7 +3,7 @@ import {AlertController, LoadingController, NavController, NavParams} from 'ioni
 import {AngularFireAuth} from "@angular/fire/auth";
 import {AngularFireDatabase} from "@angular/fire/database";
 import {RegisterPage} from "../register/register";
-import {CadastroTillProvider} from "../../providers/cadastro-dado/cadastro-dado";
+import {CadastroDadoProvider} from "../../providers/cadastro-dado/cadastro-dado";
 
 @Component({
     selector: 'page-indicacao',
@@ -19,7 +19,7 @@ export class IndicacaoPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
                 public afAuth: AngularFireAuth, public db: AngularFireDatabase, public alertCtrl: AlertController,
-                public dado: CadastroTillProvider) {
+                public dado: CadastroDadoProvider) {
     }
 
     ionViewDidLoad() {
