@@ -4,7 +4,6 @@
 # Date:   04/07/2024
 # Patrocinador: Cooperativa Coopta - https://coopta.coop.br/
 #================================================
-
 #Configurações necessarias
 
 1o.
