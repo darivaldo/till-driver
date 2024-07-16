@@ -1,8 +1,8 @@
 {
-  "name": "dado-driver",
+  "name": "till-driver",
   "version": "1.0.0",
   "author": "Darivaldo",
-  "homepage": "http://dado.com.br/",
+  "homepage": "http://till.com.br/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -86,7 +86,7 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "description": "Dado Driver App",
+  "description": "Till Driver App",
   "cordova": {
     "plugins": {
       "cordova-plugin-console": {},

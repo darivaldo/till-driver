@@ -76,7 +76,7 @@ export class RegisterPage {
             this.snapshot = this.navParams.get('snapshot');
             this.form.controls.indicadoPor.setValue(this.snapshot.codigo_indicacao);
             this.form.controls.minhaIndicacao.setValue(this.snapshot.codigo_afiliacao);
-            this.getCadastroDado();
+            this.getCadastroTill();
             this.buttonText = 'Salvar Dados';
         } else if (this.origin == 'new') {
             this.indicadoPor = this.navParams.get('indicadoPor');
@@ -88,10 +88,10 @@ export class RegisterPage {
         this.dateParams();
     }
 
-    getCadastroDado() {
+    getCadastroTill() {
         let sForm = this.form;
 
-        //Verifica cadastro dado
+        //Verifica cadastro till
         sForm.controls.name.setValue(this.snapshot.primeiro_nome + ' ' + this.snapshot.segundo_nome);
         sForm.controls.email.setValue(this.snapshot.email);
         sForm.controls.birthdate.setValue(this.snapshot.data_nascimento);
@@ -117,7 +117,7 @@ export class RegisterPage {
         */
 
         const alert = this.alertCtrl.create({
-            title: 'Dado App',
+            title: 'Till App',
             cssClass: 'alertnormal',
             message: 'Verificamos que seu cadastro pode estar incompleto. Por favor, verifique e complete suas informações.',
             buttons: [{
@@ -128,7 +128,7 @@ export class RegisterPage {
         alert.present();
     }
 
-    getDbDado() {
+    getDbTill() {
         return this.db.list('pessoas',ref => ref.orderByChild('email').equalTo(this.me.email)).valueChanges();
     }
 
@@ -206,7 +206,7 @@ export class RegisterPage {
              });
          }
  */
-        this.alertCtrl.create({message: 'Demonstração do app Dado.', buttons: ['OK']}).present();
+        this.alertCtrl.create({message: 'Demonstração do app Till.', buttons: ['OK']}).present();
         /* let loading = this.loadingCtrl.create({content: 'Criando conta...'});
          loading.present();
          this.authService.register(this.userInfo).subscribe(() => {
@@ -239,7 +239,7 @@ export class RegisterPage {
             .then((imageData) => {
                 let base64image = 'data:image/jpeg;base64,' + imageData;
                 this.photo = base64image;
-                this.writeFile(base64image, 'dadopic', 'dadoavatar.jpg');
+                this.writeFile(base64image, 'tillpic', 'tillavatar.jpg');
 
             }, (error) => {
                 console.error(error);

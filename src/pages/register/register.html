@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar color="dado">
+    <ion-navbar color="till">
         <ion-title>{{'Crie sua conta' | translate}}</ion-title>
     </ion-navbar>
 </ion-header>
@@ -24,7 +24,7 @@
             <div *ngSwitchCase="'profile'">
                 <!--
                 <ion-input type="file" [hidden]="true" #inputFilePhoto (change)="onChosePhoto($event.target.files)"></ion-input>
-                <button type="button" ion-button color="dado" (click)="selectPhoto()">Escolher foto do perfil</button>
+                <button type="button" ion-button color="till" (click)="selectPhoto()">Escolher foto do perfil</button>
                 <ion-card *ngIf="photoPreview">
                     <ion-item>
                         <ion-avatar item-start>
@@ -104,7 +104,7 @@
                     Ao se registrar, você concorda com os<br/>
                     Termos e Condições deste aplicativo.<br/>
                     Para ler, clique no botão abaixo:<br/>
-                    <button ion-button clear (click)="goTermos()" color="dado">Termos e Condições</button>
+                    <button ion-button clear (click)="goTermos()" color="till">Termos e Condições</button>
                 </ion-item>
             </div>
             <!--
@@ -161,5 +161,5 @@
     </form>
 </ion-content>
 <ion-footer>
-    <button type="submit" ion-button block color="dado" (click)="submit()" [disabled]="form.invalid">{{buttonText}}</button>
+    <button type="submit" ion-button block color="till" (click)="submit()" [disabled]="form.invalid">{{buttonText}}</button>
 </ion-footer>

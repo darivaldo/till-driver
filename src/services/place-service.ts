@@ -521,7 +521,7 @@ export class PlaceService {
 
 
 
-    temaDado() {
+    temaTill() {
 
       return [
       {

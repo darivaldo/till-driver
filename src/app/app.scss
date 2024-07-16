@@ -13,7 +13,7 @@
 }
 .header{
   background: color($colors, light);
-  border-bottom: 5px solid color($colors, dado);
+  border-bottom: 5px solid color($colors, till);
 }
 #docsPDF, #avatar{
   display:none;
@@ -38,7 +38,7 @@
 }
 
 .alertcss{
-  background: color($colors, dado);
+  background: color($colors, till);
 }
 
 .alertcss .alert-head{
@@ -79,7 +79,7 @@
 }
 
 .header{
-  background: color($colors, dado)
+  background: color($colors, till)
 }
 
 .light-bg {
@@ -202,7 +202,7 @@ a {
 }
 
 .alertcss{
-  background: color($colors, dado);
+  background: color($colors, till);
 }
 
 .alertcss .alert-head{
@@ -249,7 +249,7 @@ a {
   padding: 10px 30px !important;
 }
 
-.text-dado{
+.text-till{
   width: 100%;
   padding: 10px 15px;
 }
@@ -258,8 +258,8 @@ a {
   color: #fff;
 }
 
-.text-dado{
-  color: color($colors, 'dado');
+.text-till{
+  color: color($colors, 'till');
 }
 
 .text-center{
@@ -461,8 +461,8 @@ ion-navbar.no-border {
     background-color: #68C91F;
   }
 
-  .dado-txt{
-    color: color($colors, 'dado');
+  .till-txt{
+    color: color($colors, 'till');
   }
 
 }

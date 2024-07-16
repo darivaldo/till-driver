@@ -42,7 +42,7 @@ import {BrMaskerModule} from 'brmasker-ionic-3';
 import {BankService} from "../services/bank-service";
 import { CepProvider } from '../providers/cep/cep';
 import {IndicacaoPage} from "../pages/indicacao/indicacao";
-import { CadastroDadoProvider } from '../providers/cadastro-dado/cadastro-dado';
+import { CadastroTillProvider } from '../providers/cadastro-till/cadastro-till';
 import {TermosPage} from "../pages/termos/termos";
 import {GanhosPage} from "../pages/ganhos/ganhos";
 import {PrizeService} from "../services/prize-service";
@@ -140,7 +140,7 @@ export const firebaseConfig = {
         SelectCarService,
         BankService,
         CepProvider,
-        CadastroDadoProvider,
+        CadastroTillProvider,
         PrizeService,
         BackgroundMode,
         BackgroundGeolocation
