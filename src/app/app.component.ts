@@ -282,7 +282,7 @@ export class MyApp {
                 // Android only section
                 locationProvider: 0,
                 startForeground: true,
-                //notificationTitle: 'Till Tracker',
+                //notificationTitle: 'Dado Tracker',
                 //notificationText:"App is online",
                 notificationsEnabled: false,
                 interval: (POSITION_INTERVAL * 2),

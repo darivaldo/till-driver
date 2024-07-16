@@ -17,9 +17,9 @@
     <div class="booking-form card round" margin>
         <ion-grid>
             <ion-row style="border-bottom: 1px solid #ccc;">
-                <ion-col ion-text><h6 class="text-till text-center">Mês/Ano</h6></ion-col>
-                <ion-col ion-text><h6 class="text-till text-center">Pontos Acumulados</h6></ion-col>
-                <ion-col ion-text><h6 class="text-till text-center">Cashback</h6></ion-col>
+                <ion-col ion-text><h6 class="text-dado text-center">Mês/Ano</h6></ion-col>
+                <ion-col ion-text><h6 class="text-dado text-center">Pontos Acumulados</h6></ion-col>
+                <ion-col ion-text><h6 class="text-dado text-center">Cashback</h6></ion-col>
             </ion-row>
             <ion-row *ngFor="let cash of cashBack">
                 <ion-col class="text-center"><span class="text-center">{{ cash.mes }}/{{ cash.ano }}</span></ion-col>

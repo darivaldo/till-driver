@@ -148,7 +148,7 @@ export class HomePage {
     presentConfirm() {
         let alert = this.alertCtrl.create({
             title: 'Confirmação',
-            message: 'Deseja realmente sair do Till Motorista?',
+            message: 'Deseja realmente sair do Dado Motorista?',
             buttons: [
                 {
                     text: 'Não',

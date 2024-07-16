@@ -20,9 +20,9 @@ export class SelectCarService {
     async getCarType(brand, model) {
 
         let resultado: any;
-        let tillURL = 'http://bumingapi.bumingapp.com.br/public/api/v1/cartype/verify/?brand='+brand+'&model='+model;
+        let dadoURL = 'http://bumingapi.bumingapp.com.br/public/api/v1/cartype/verify/?brand='+brand+'&model='+model;
         return await new Promise((resolve, reject) => {
-            this.http.get(tillURL)
+            this.http.get(dadoURL)
                 .subscribe(function(result){
                     resultado = result;
                     resolve(resultado);
@@ -34,9 +34,9 @@ export class SelectCarService {
 
     async getUFs(){
         let resultado: any;
-        let tillURL = 'http://bumingapi.bumingapp.com.br/public/api/v1/uf/';
+        let dadoURL = 'http://bumingapi.bumingapp.com.br/public/api/v1/uf/';
         return await new Promise((resolve, reject) => {
-            this.http.get(tillURL)
+            this.http.get(dadoURL)
                 .subscribe(function(result){
                     resultado = result;
                     resolve(resultado);
@@ -49,9 +49,9 @@ export class SelectCarService {
 
     async getMunicipios(uf){
         let resultado: any;
-        let tillURL = 'http://bumingapi.bumingapp.com.br/public/api/v1/municipios/?uf='+uf;
+        let dadoURL = 'http://bumingapi.bumingapp.com.br/public/api/v1/municipios/?uf='+uf;
         return await new Promise((resolve, reject) => {
-            this.http.get(tillURL)
+            this.http.get(dadoURL)
                 .subscribe(function(result){
                     resultado = result;
                     resolve(resultado);
